@@ -42,5 +42,8 @@ kubectl describe pod webserver
 kubectl scale --replicas=3 rs/web
 
 - Q3: Briefly describe the process of a deployment rolling update, i.e., how are new version of pods created and how are old version of pods terminated. Which configurations can control the pods being created or deleted in parallel?
+
+The deployment controller creates new pods with the updated version of the application. Once the new pods are successfully running and ready, the deployment controller gradually terminates the pods running the old version of the application. Both done gradually to ensure number of running pods.
+  
 - Q4: Inside the Kubernetes cluster, how to access a service named "svc1" offering HTTP service at Port 8000?
 - Q5: What is an Ingress in Kubernetes? What type of resources does an Ingress configuration typically point to as its backend? 
